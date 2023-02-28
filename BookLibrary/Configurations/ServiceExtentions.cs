@@ -35,7 +35,18 @@ namespace BookLibrary.Configurations
             services.AddValidatorsFromAssemblyContaining<BookRequestValidator>();
             services.AddValidatorsFromAssemblyContaining<ReviewRequestValidator>();
             services.AddValidatorsFromAssemblyContaining<RatingRequestValidator>();
+        }
 
+        public static void ConfigureCors(this IServiceCollection services)
+        {
+            services.AddCors(options =>
+            {
+                options.AddPolicy("CorsDefault", builder =>
+                    builder.AllowAnyOrigin()
+                    .AllowAnyMethod()
+                    .AllowAnyHeader().
+                    WithExposedHeaders("content-disposition"));
+            });
         }
 
 

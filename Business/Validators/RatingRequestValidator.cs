@@ -18,7 +18,6 @@ namespace Business.Validators
                 .NotEmpty().WithMessage("{PropertyName} should be not empty.")
                 .GreaterThanOrEqualTo(1).WithMessage("{PropertyName} musts be more than 1.")
                 .LessThanOrEqualTo(5).WithMessage("{PropertyName} musts be less than 5.");
-                
         }
     }
 }
