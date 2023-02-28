@@ -10,6 +10,8 @@ namespace Data.UoW.Interface
     public interface IUnitOfWork : IDisposable
     {
         IBookRepository BookRepository { get; }
+        IReviewRepository ReviewRepository { get; }
+        IRatingRepository RatingRepository { get; }
         Task SaveAsync();
     }
 }

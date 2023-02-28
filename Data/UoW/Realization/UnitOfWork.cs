@@ -14,6 +14,8 @@ namespace Data.UoW.Realization
     {
         private readonly LibraryDbContext _dbContext;
         private IBookRepository? _bookRepository;
+        private IReviewRepository? _reviewRepository;
+        private IRatingRepository? _ratingRepository;
 
         public UnitOfWork(LibraryDbContext dbContext)
         {
@@ -25,6 +27,22 @@ namespace Data.UoW.Realization
             get
             {
                 return _bookRepository = _bookRepository ??= new BookRepository(_dbContext);
+            }
+        }
+
+        public IReviewRepository ReviewRepository
+        {
+            get
+            {
+                return _reviewRepository = _reviewRepository ??= new ReviewRepository(_dbContext);
+            }
+        }
+
+        public IRatingRepository RatingRepository
+        {
+            get
+            {
+                return _ratingRepository = _ratingRepository ??= new RatingRepository(_dbContext);
             }
         }
 

@@ -17,8 +17,11 @@ namespace Data.Repositories.Realizations
             await _dbContext.Set<TEntity>().AddAsync(entity);
         }
 
-        public void Delete(TEntity entity)
+        public async Task Delete(int id)
         {
+            var entity = await GetByIdAsync(id);
+            if (entity == null)
+                return;
             _dbContext.Set<TEntity>().Remove(entity);
         }
 

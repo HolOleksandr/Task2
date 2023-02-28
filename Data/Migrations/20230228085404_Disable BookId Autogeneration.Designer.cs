@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Data.Migrations
 {
     [DbContext(typeof(LibraryDbContext))]
-    [Migration("20230227142034_Initial Migration")]
-    partial class InitialMigration
+    [Migration("20230228085404_Disable BookId Autogeneration")]
+    partial class DisableBookIdAutogeneration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -26,10 +26,7 @@ namespace Data.Migrations
             modelBuilder.Entity("Data.Entities.Book", b =>
                 {
                     b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
                         .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<string>("Author")
                         .IsRequired()

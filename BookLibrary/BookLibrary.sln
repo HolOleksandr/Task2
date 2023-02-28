@@ -4,8 +4,16 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 17.3.32825.248
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookLibrary", "BookLibrary.csproj", "{AC0254EB-4A74-436C-896E-C3CF3596BF3B}"
+	ProjectSection(ProjectDependencies) = postProject
+		{DE5E09ED-378F-4105-87A9-EFE84B09CB11} = {DE5E09ED-378F-4105-87A9-EFE84B09CB11}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data", "..\Data\Data.csproj", "{7F984620-BE00-4B10-B6BD-07E87367F26D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Business", "..\Business\Business.csproj", "{DE5E09ED-378F-4105-87A9-EFE84B09CB11}"
+	ProjectSection(ProjectDependencies) = postProject
+		{7F984620-BE00-4B10-B6BD-07E87367F26D} = {7F984620-BE00-4B10-B6BD-07E87367F26D}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +29,10 @@ Global
 		{7F984620-BE00-4B10-B6BD-07E87367F26D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7F984620-BE00-4B10-B6BD-07E87367F26D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7F984620-BE00-4B10-B6BD-07E87367F26D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE5E09ED-378F-4105-87A9-EFE84B09CB11}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE5E09ED-378F-4105-87A9-EFE84B09CB11}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE5E09ED-378F-4105-87A9-EFE84B09CB11}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE5E09ED-378F-4105-87A9-EFE84B09CB11}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

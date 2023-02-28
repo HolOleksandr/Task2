@@ -1,14 +1,19 @@
+using BookLibrary.Configurations;
 using Data.Data;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
+
+
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+builder.Services.RegisterDependencies();
+builder.Services.ConfigureMapping();
+builder.Services.ConfigureValidators();
 
 var connectionString = builder.Configuration.GetConnectionString("Default");
 
